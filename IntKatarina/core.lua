@@ -30,7 +30,7 @@ core.AutoKill = function()
             if e.is_ready() and hero.pos:dist(player) <= 725 then 
                 if damage.spell(player, hero, SpellSlot.E) >= hero.health then
                     if Menu.misc['Misc.KillSteal.UseE']:get() then
-                        e.is_execute(hero);
+                        e.is_execute(hero.pos);
                         return
                     end
                 end 
@@ -38,7 +38,7 @@ core.AutoKill = function()
             if (e.is_ready() and q.is_ready()) and hero.pos:dist(player) <= 725 then 
                 if (damage.spell(player, hero, SpellSlot.Q + damage.spell(player, hero, SpellSlot.E))) >= hero.health then
                     if Menu.misc['Misc.KillSteal.UseE']:get() and Menu.misc['Misc.KillSteal.UseQ']:get() then
-                        e.is_execute(hero);
+                        e.is_execute(hero.pos);
                         q.is_execute(hero);
                     end
                 end 
